@@ -1,0 +1,914 @@
+
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+}
+
+body{
+    width: auto;
+    height: auto;
+    flex-shrink: 0;
+    background: #20A39E;
+}
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 39px 48px;
+}
+
+.logo{
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 516;
+    line-height: normal;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+}
+
+.link{
+    display: flex;
+    gap: 54px;
+    align-items: center;
+}
+
+.link a{
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    transition: 0.2s ease-in-out;
+}
+
+.link a:hover{
+    scale: 2.05;
+    color: #d2edfc;
+    cursor: pointer
+}
+
+.ctc-btn button{
+    width: 150px;
+    height: 43px;
+    flex-shrink: 0;
+    color: #2799D8;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 486;
+    line-height: normal;
+    border-radius: 30px;
+    background: #D9D9D9;
+    border: none;
+    transition: 0.2s ease-in-out;
+}
+
+.ctc-btn button:hover{
+    background-color: #2799D8;
+    color: #D9D9D9;
+    scale: 1.05;
+    cursor: pointer;
+}
+
+#hero{
+    padding-top: -70px;
+}
+
+
+.title{
+    padding-left: 86px;
+}
+
+.title h1{
+    width: 1798.17px;
+    height: 201px;
+    flex-shrink: 0;
+    aspect-ratio: 838.17/201.00;
+    color: #D9D9D9;
+    font-family: 'Outfit', sans-serif;
+    font-size: 194px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+}
+
+.para{
+
+    width: 609px;
+    height: 94px;
+    flex-shrink: 0;
+}
+
+.content{
+    display: flex;
+    position: relative;
+    top: 59px;
+    padding-left: 146px;
+}
+
+.btn button{
+    width: 173px;
+    position: relative;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid #D9D9D9;
+    right: -800px;
+    top: 28px;
+    color: #D9D9D9;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 486;
+    line-height: normal;
+    background: transparent;
+    transition: 0.2s ease-in-out;
+}
+.btn button:hover{
+    padding: 6px;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+
+.para p{
+    color: #FFF;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.gallery{
+    width: 1298px;
+    height: 667px;
+    flex-shrink: 0;
+    padding-top: 100px;
+    display: flex;
+}
+
+.layout {
+    width: 100%;
+    max-width: 1650px;
+    margin: 0 auto;
+    padding: 110px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1.5fr;
+    grid-template-rows: 250px 450px;
+    gap: 40px;
+}
+
+.item {
+    background-color: white;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Loading animation */
+.item::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.5s infinite;
+    z-index: 1;
+}
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Hide loading animation when image is loaded */
+.item.loaded::before {
+    display: none;
+}
+
+.item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.item:hover img {
+    transform: scale(1.1);
+}
+
+/* Adding overlay effect */
+.item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.3s ease;
+}
+
+.item:hover::after {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Specific Positions with fade-in animation */
+.item1, .item2, .item3, .item4 {
+    animation: fadeIn 0.8s ease-out forwards;
+    opacity: 0;
+}
+
+.item1 { animation-delay: 0.1s; }
+.item2 { animation-delay: 0.3s; }
+.item3 { animation-delay: 0.5s; }
+.item4 { animation-delay: 0.7s; }
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.item1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.item2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.item3 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.item4 {
+    grid-column: 1 / 3;
+    grid-row: 2 / 3;
+}
+
+/* About Section Styles */
+#about {
+    padding: 100px 0;
+    background-color: #D9D9D9;
+    opacity: 0;
+    animation: fadeInSection 0.8s ease-out forwards;
+}
+
+.about-container {
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+
+.about-right {
+    flex: 1;
+    padding-left: 90px;
+}
+
+.image-grid {
+    position: relative;
+}
+
+.main-img {
+    width: 551px;
+    height: 756px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+.about-right h1 {
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 74px; /* 102.778% */
+    padding-top: 200px;
+}
+
+.about-right p {
+    width: 681px;
+    padding-top: 54px;
+    height: 238px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px; /* 137.5% */
+}
+
+.about-right .btn button{
+    width: 173px;
+    position: relative;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid #101010;
+    right: 0;
+    top: 28px;
+    color: #000000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 486;
+    line-height: normal;
+    background: transparent;
+    transition: 0.2s ease-in-out;
+}
+.btn button:hover{
+    padding: 6px;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+/* Add these new animations */
+@keyframes fadeInSection {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stp-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 86px 0;
+}
+
+.stp-main h1 {
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 16px;
+}
+
+.stp-main p {
+    width: 699px;
+    color: #D9D9D9;
+    text-align: center;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 30px;
+}
+
+.stp-container{
+    max-width: 1700px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    padding: 0 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+}
+
+.stp-left{
+    flex: 1;
+    padding-left: 88px;
+}
+
+.card h6{
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.7;
+    margin-bottom: 8px;
+    padding-top: 40.5px;
+}
+
+.card h3{
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 17px;
+}
+.card p{
+    width: 602px;
+    color: #FFF;
+    font-family: 'Nunito', sans-serif;
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding-bottom: 23px;
+}
+
+.last{
+    padding-bottom: 168px;
+}
+
+
+.image-grid {
+    position: relative;
+}
+
+.work-img {
+    width: 655px;
+    height: 944px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUp 0.8s ease-out 0.4s forwards;
+}
+
+#projects{
+    background: #C4C6C7;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+#projects .prt-main{
+    display: flex;
+    padding-top: 78px;
+}
+
+#projects .prt-main .tit h1{
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-left: 89px;
+}
+
+#projects .btn button{
+    width: 173px;
+    position: relative;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid #101010;
+    right: -1000px;
+    top: 28px;
+    color: #000000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 486;
+    line-height: normal;
+    background: transparent;
+    transition: 0.2s ease-in-out;
+}
+
+#projects .p p {
+    color: #000;
+    width: 613px;
+    height: 58px;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    padding-left: 89px;
+    padding-top: 29px;
+}
+
+.prt-card{
+    padding-top: 100px;
+    padding-left: 89px;
+    width: 100%;
+    display: flex;
+}
+
+.prt-card .img img{
+    width: 446px;
+    height: 363.376px;
+    flex-shrink: 0;
+    object-fit: cover;
+}
+
+.prt-card .tim h1{
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-size: 52px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding-top: 29.62px;
+}
+
+.prt-card .par p{
+    width: 449px;
+    height: 102px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.clt-container{
+    width: 100%;
+    display: flex;
+    padding-top: 165px;
+    padding-bottom: 92px;
+}
+
+.clt-img{
+    width: 681px;
+    height: 800px;
+    flex-shrink: 0;
+    object-fit: cover;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    margin-top: 100px;
+}
+
+.clt-right{
+    padding-left: 150px;
+}
+
+.clt-tit h1{
+    width: 685px;
+    height: 237px;
+    flex-shrink: 0;
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 76px; /* 105.556% */
+}
+
+.clt-p{
+    padding-top: 22px;
+} 
+
+.clt-p p{
+    width: 641px;
+    color: #FFF;
+    font-family: 'Nunito', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.9;
+}
+
+.stars{
+    padding-top: 49px;
+}
+
+.name{
+    padding-top: 10px;
+}
+
+.name h3{
+    color: #FFF;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.buttons{
+    padding-top: 35px;
+    display: flex;
+    gap: 20px;
+}
+
+.btn-left button{
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    border:solid 2px #C4C6C7;
+    border-radius: 50%;
+    background: transparent;
+    opacity: 0.7;
+}
+
+.btn-right button{
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0;
+    aspect-ratio: 1/1;
+    border:solid 2px #C4C6C7;
+    border-radius: 50%;
+    background: transparent;
+}
+
+.footer-content{
+    background: #C4C6C7;
+    display: flex;
+    flex-shrink: 0;
+    padding-top: 116px;
+    padding-left: 88px;
+    padding-bottom: 79px;
+}
+
+.footer-left h1{
+    width: 529px;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 72px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 76px; /* 105.556% */
+}
+
+.ft-btn{
+    padding-top: 39px;
+}
+
+.footer-left .ft-btn button{
+    width: 173px;
+    position: relative;
+    height: 43px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 1px solid #101010;
+    right: 0;
+    top: 28px;
+    color: #000000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 486;
+    line-height: normal;
+    background: transparent;
+    transition: 0.2s ease-in-out;
+}
+.footer-left .ft-btn button:hover{
+    padding: 6px;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+.footer-right{
+    padding-left: 156px;
+}
+
+.ftr-tit {
+    padding-top:  33px;
+    padding-bottom: 40.1px;
+}
+
+.ftr-tit p{
+    width: 624px;
+    height: 86px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+}
+
+.ftr-soc{
+    display: flex;
+    padding-top: 74px;
+}
+
+
+.ftr-ctc h2{
+    width: 158px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+
+.ftr-ctc .us{
+    padding-top: 45px;
+}
+
+.ftr-ctc .us h3{
+    width: 114px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+    padding-bottom: 4px;
+}
+
+.ftr-ctc .us p{
+    width: 378px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+}
+
+.ftr-ctc .phone{
+    padding-top: 45px;
+}
+
+.ftr-ctc .phone h3{
+    width: 114px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+}
+
+.ftr-ctc .phone p{
+    width: 378px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+}
+
+.ftr-ctc .adress{
+    padding-top: 11px;
+}
+
+.ftr-ctc .adress h3{
+    width: 114px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+    padding-bottom: 10px;
+}
+
+.ftr-ctc .adress p{
+    width: 378px;
+    height: 30px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+}
+
+.ftr-social{
+    padding-left: 256px;
+}
+
+.ftr-social h2{
+    width: 158px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.ftr-social .links{
+    padding-top: 47px;
+}
+
+.ftr-social .links a{
+    color: #000;
+    font-family: 'Outfit', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 80px; /* 125% */
+    letter-spacing: 1.44px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.ftr-social .links a:hover{
+    color: #787878;
+}
+
+.web{
+    padding-top: 336px;
+}
+
+.web a{
+    width: 144px;
+    color: #000;
+    font-family: 'Elza Round', sans-serif;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px; /* 125% */
+    letter-spacing: 1.44px;
+    text-decoration: none;
+    transition: 0.2s ease-in-out;
+}
+
+.web a:hover{
+    color: #787878;
+}
